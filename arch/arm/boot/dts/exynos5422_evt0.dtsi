@@ -91,6 +91,16 @@
 		};
 	};
 
+        arm-pmu {
+            compatible = "arm,cortex-a15-pmu";
+            interrupt-parent = <&combiner>;
+            interrupts = <1 2>, <7 0>, <16 6>, <19 2>;
+
+            compatible = "arm,cortex-a7-pmu";
+            interrupt-parent = <&gic>;
+            interrupts = <0 192 4>, <0 193 4>, <0 194 4>, <0 195 4>;
+        };
+
 	watchdog@10020000 {
 		compatible = "samsung,s3c2410-wdt";
 		reg = <0x101D0000 0x100>;
